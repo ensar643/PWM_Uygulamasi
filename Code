@@ -1,0 +1,14 @@
+void setup() {
+Serial.begin(9600);
+pinMode(3,OUTPUT);
+}
+void loop() {
+int pot = analogRead(A0);
+int LED = map(pot, 0, 1023, 0, 255);
+analogWrite(3, LED); // pot değişkenini 3 numaralı porta gönderir.
+Serial.print(“Pot Değeri = “);
+Serial.print(pot); // pot değişkenini seri porta yazdırır.
+Serial.print(“\t LED Değeri = “);
+Serial.println(LED); // LED değişkenini seri porta yazdırır.
+delay(2);
+}
